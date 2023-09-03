@@ -175,7 +175,7 @@ const columns = reactive([
   {
     title: "视频时长",
     dataIndex: "druation",
-    formType: "slider",
+    formType: "input-number",
     search: true,
     commonRules: {
       required: true,
@@ -183,22 +183,21 @@ const columns = reactive([
     },
     min: 1,
     max: 172800,
-    step: 5,
-    showTicks: true,
   },
   {
     title: "比特率",
     dataIndex: "bitrates",
-    formType: "slider",
-    search: true,
+    formType: "input-number",
+    search: false,
+    hide: true,
     commonRules: {
       required: true,
       message: "请输入比特率",
     },
-    min: 10,
+    min: 100,
     max: 1000000,
-    step: 100,
-    showTicks: true,
+    step: 1000,
+    showTicks: false,
   },
   {
     title: "分辨率(宽,高)",
