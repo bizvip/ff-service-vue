@@ -69,6 +69,10 @@ const options = reactive({
     url: "resource/topicVideo/export",
     auth: ["resource:topicVideo:export"],
   },
+  beforeRequest: (params) => {
+    params.orderBy = "id";
+    params.orderType = "desc";
+  },
 });
 
 const columns = reactive([
@@ -106,11 +110,12 @@ const columns = reactive([
     title: "原始文件扩展名",
     dataIndex: "origin_ext",
     formType: "input",
-    search: true,
+    search: false,
     commonRules: {
       required: true,
       message: "请输入原始文件扩展名",
     },
+    hide: true,
   },
   {
     title: "存储对象名",
@@ -126,21 +131,23 @@ const columns = reactive([
     title: "存储对象路径",
     dataIndex: "obj_path",
     formType: "input",
-    search: true,
+    search: false,
     commonRules: {
       required: true,
       message: "请输入存储对象路径",
     },
+    hide: true,
   },
   {
     title: "存储扩展名",
     dataIndex: "obj_ext",
     formType: "input",
-    search: true,
+    search: false,
     commonRules: {
       required: true,
       message: "请输入存储扩展名",
     },
+    hide: true,
   },
   {
     title: "宽度",
