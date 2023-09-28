@@ -1,6 +1,6 @@
 <template>
   <div class="ma-content-block lg:flex justify-between p-4">
-    <ma-crud :options="options" :columns="columns" ref="crudRef"> </ma-crud>
+    <ma-crud :options="options" :columns="columns" ref="crudRef"></ma-crud>
   </div>
 </template>
 <script setup>
@@ -176,9 +176,9 @@ const columns = reactive([
     title: "播放地址",
     dataIndex: "play_src",
     formType: "input",
-    search: true,
+    search: false,
     commonRules: {
-      required: true,
+      required: false,
       message: "请输入播放地址",
     },
   },
